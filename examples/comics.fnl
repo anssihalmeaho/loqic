@@ -92,7 +92,7 @@ main = proc(query-name)
 
 	query = symval(query-name)
 	results = call(loqic.match query facts)
-	call(stdfu.ploop proc(item _) print(item) end results '')
+	call(stdfu.loop func(item output) plus(output sprintf('%v\n' item)) end results '\n')
 end
 
 endns
